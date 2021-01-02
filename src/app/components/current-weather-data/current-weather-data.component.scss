@@ -1,0 +1,29 @@
+.current-content {
+    text-align: center;
+    margin: 15px auto;
+}
+.location {
+    font-size: 14px;
+    font-weight: 800;
+    color: #2035D4;
+}
+.main-tmp {
+    position: relative;
+    font-size: 55px;
+    font-weight: 300;
+}
+.description {
+    margin-bottom: 7px;
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+.max-min {
+    font-weight: 700;
+    .divider {
+        margin: 0 7px 0 5px;
+    }
+}
+.more-info {
+    margin: 15px auto;
+}

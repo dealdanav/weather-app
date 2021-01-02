@@ -1,0 +1,31 @@
+<article *ngIf="weather" class="current-content">
+    <mat-card>
+        <mat-card-content>
+            <div class="location">{{ weather.name }} {{ weather.sys.country }}</div>
+            <div class="main-tmp">
+                {{ weather.main.temp }}°
+            </div>
+            <div class="description">{{ weather.weather[0].description }}</div>
+            <div class="max-min">
+                <span *ngIf="tmpMax">{{ tmpMax | number:'1.0-0' }}°</span>
+                <span class="divider">/</span>
+                <span *ngIf="tmpMin">{{ tmpMin | number:'1.0-0' }}°</span>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</article>
+
+<article *ngIf="weather" class="more-info">
+    <mat-accordion>
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <h4>Más información del clima</h4>
+            </mat-expansion-panel-header>
+            <p><b>Velocidad del viento:</b> {{ weather.wind.speed }}m/s</p>
+            <p><b>Humedad:</b> {{ weather.main.humidity }}%</p>
+            <p><b>Presión:</b> {{ weather.main.pressure }}hPa</p>
+            <p *ngIf="sunrise"><b>Amanecer:</b> {{ sunrise | date:"shortTime" }}</p>
+            <p *ngIf="sunset"><b>Ocaso:</b> {{ sunset | date:"shortTime" }}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</article>

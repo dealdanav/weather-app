@@ -1,0 +1,13 @@
+<article>
+    <h4>Pronóstico de la semana</h4>
+    <div class="forecast-chart">
+        <canvas baseChart width="400" height="400"
+            [datasets]="lineChartData"
+            [labels]="lineChartLabels"
+            [options]="lineChartOptions"
+            [colors]="lineChartColors"
+            [legend]="lineChartLegend"
+            [chartType]="lineChartType">
+        </canvas>
+    </div>
+</article>
